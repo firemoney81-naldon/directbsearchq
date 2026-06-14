@@ -1,23 +1,498 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
-    <main>
-      <h1>Home page</h1>
-    </main>
-  </body>
-</html>
+
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://yourdomain.com/car-insurance-october"
+      },
+      "headline": "2026년 10월 자동차보험 혜택 비교 분석 및 할인 특약 총정리",
+      "image": [
+        "https://yourdomain.com/insurance-october.jpg"
+      ],
+      "datePublished": "2026-06-14T09:00:00+09:00",
+      "dateModified": "2026-06-14T09:00:00+09:00",
+      "author": {
+        "@type": "Organization",
+        "name": "금융 정보 분석원"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "올바른 보험 가이드",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://yourdomain.com/logo.png"
+        }
+      },
+      "description": "2026년 10월 기준 국내 주요 보험사의 자동차보험 혜택과 할인 특약을 비교합니다. 신규 가입 혜택, 사은품, 상품권 및 현금지원 팁을 제공하며 20대부터 50대까지의 평균 보험료 견적을 상세히 다룹니다."
+    }
+    </script>
+    
+    <style>
+        :root {
+            --primary-color: #1e3a8a; 
+            --secondary-color: #0d9488; 
+            --background-color: #f8fafc; 
+            --card-background: #ffffff;
+            --text-color: #334155;
+            --light-border: #cbd5e1;
+            --highlight-bg: #fef3c7;
+            --highlight-border: #d97706;
+        }
+
+        body { 
+            font-family: 'Noto Sans KR', sans-serif; 
+            line-height: 1.8; 
+            margin: 0; 
+            padding: 0; 
+            background: var(--background-color); 
+            color: var(--text-color);
+        }
+
+        .container { 
+            max-width: 960px; 
+            margin: 20px auto; 
+            padding: 0 15px; 
+        }
+
+        header, section, footer, .card { 
+            background: var(--card-background); 
+            border-radius: 12px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+            padding: 30px; 
+            margin-bottom: 25px;
+        }
+
+        h1 { 
+            color: var(--primary-color); 
+            font-size: 2em; 
+            text-align: center; 
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--secondary-color);
+            margin-top: 0;
+        }
+
+        h2 { 
+            color: var(--primary-color); 
+            font-size: 1.5em; 
+            margin-top: 35px; 
+            padding-left: 10px;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        h3 { 
+            color: var(--secondary-color); 
+            font-size: 1.2em; 
+            margin-top: 25px;
+        }
+        
+        p, li {
+            text-align: justify;
+            font-size: 1em;
+            color: #475569;
+        }
+
+        table { 
+            width: 100%; 
+            border-collapse: separate; 
+            border-spacing: 0;
+            margin: 25px 0; 
+            border: 1px solid var(--light-border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td { 
+            border: 1px solid var(--light-border); 
+            padding: 14px; 
+            text-align: left; 
+        }
+        
+        th { 
+            background: var(--primary-color); 
+            color: #ffffff; 
+            font-weight: 600;
+            border-color: var(--primary-color);
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f1f5f9;
+        }
+
+        .btn-cta {
+            display: block;
+            width: fit-content;
+            margin: 25px auto;
+            padding: 15px 35px;
+            background: var(--secondary-color);
+            color: #ffffff;
+            font-weight: 700;
+            border-radius: 50px;
+            box-shadow: 0 6px 15px rgba(13, 148, 136, 0.3);
+            transition: background-color 0.3s ease, transform 0.2s;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+            font-size: 1.1em;
+        }
+        
+        .btn-cta:hover {
+            background: #0f766e;
+            transform: translateY(-2px);
+        }
+
+        form label { 
+            display: block; 
+            margin-top: 18px; 
+            margin-bottom: 6px; 
+            font-weight: 600; 
+            color: var(--primary-color);
+        }
+        
+        form input[type="text"], 
+        form input[type="tel"], 
+        form input[type="number"], 
+        form select, 
+        form textarea {
+            width: 100%; 
+            padding: 12px; 
+            border: 1px solid var(--light-border); 
+            border-radius: 6px; 
+            box-sizing: border-box; 
+            transition: border-color 0.3s;
+            font-size: 1em;
+            background-color: #f8fafc;
+        }
+        
+        form input:focus, 
+        form select:focus, 
+        form textarea:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+            box-shadow: 0 0 5px rgba(13, 148, 136, 0.3);
+            background-color: #ffffff;
+        }
+
+        .highlight-box {
+            background: var(--highlight-bg);
+            border-left: 5px solid var(--highlight-border);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+            color: #78350f;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0;
+        }
+        
+        nav li {
+            margin: 8px 10px;
+        }
+        
+        nav a {
+            color: var(--primary-color);
+            font-weight: 600;
+            padding: 8px 18px;
+            border: 1px solid var(--primary-color);
+            border-radius: 20px;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.95em;
+        }
+        
+        nav a:hover {
+            background: var(--primary-color);
+            color: #ffffff;
+        }
+        
+        .external-links ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .external-links li {
+            margin-bottom: 12px;
+        }
+
+        .external-links a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dashed var(--secondary-color);
+        }
+        
+        .external-links a:hover {
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--primary-color);
+        }
+        
+        @media(max-width: 768px) {
+            h1 { font-size: 1.6em; }
+            h2 { font-size: 1.3em; }
+            .btn-cta { width: 90%; }
+            nav ul { justify-content: space-around; }
+            nav li { margin: 6px; }
+            nav a { padding: 6px 12px; font-size: 0.85em; }
+            th, td { padding: 10px; font-size: 0.85em; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>2026년 10월 자동차보험 혜택 비교 및 할인 특약 분석 가이드</h1>
+            <p style="text-align: center; font-size: 1.05em; color: #64748b; margin-top: 10px;">
+                소비자 중심의 투명한 정보 분석을 바탕으로 각 보험사별 혜택과 절약 방안을 제시합니다.
+            </p>
+            <a href="#quote-form" class="btn-cta">실시간 맞춤형 자동차보험 최저가 견적 비교하기</a>
+        </header>
+
+        <nav aria-label="메인 내비게이션">
+            <ul>
+                <li><a href="#market-trends">시장 분석</a></li>
+                <li><a href="#premium-calc">보험료 산정</a></li>
+                <li><a href="#benefits-comparison">혜택 비교</a></li>
+                <li><a href="#community-reviews">커뮤니티 후기</a></li>
+                <li><a href="#channel-differences">채널별 차이점</a></li>
+                <li><a href="#ai-analysis">AI 분석 전망</a></li>
+                <li><a href="#external-resources">참고 사이트</a></li>
+                <li><a href="#quote-form">견적 신청</a></li>
+            </ul>
+        </nav>
+
+        <section id="market-trends">
+            <h2>1. 2026년 10월 자동차보험 시장 동향 및 소비자 선택 기준</h2>
+            <p>
+                매년 10월이 되면 국내 자동차보험 시장은 각 전문 업체 및 대형 보험사 간의 가입 유치 경쟁으로 활기를 띱니다. 2026년 10월 역시 다수의 보험사가 신규 가입 고객을 선점하기 위해 다양한 혜택과 프로모션을 쏟아내고 있습니다. 소비자가 자동차보험에 가입할 때 가장 중요하게 고려하는 요소는 단연 본인의 조건에 맞는 가장 저렴한곳 혹은 가장 싼곳을 찾는 일입니다. 하지만 단순한 가격 외에도 가입 시 제공되는 사은품, 현금지원, 지원금 등의 부가적인 경제적 가치도 중요한 선택 기준이 됩니다.
+            </p>
+            <p>
+                최근에는 네이버, 구글, 유튜브와 같은 대형 검색 포털 및 소셜 미디어를 통해 여러 사용자의 내돈내산 후기를 비교하는 흐름이 정착되었습니다. 트위터, 인스타그램, 페이스북 등 다양한 소셜 네트워크 서비스 내에서도 실시간 가입 이벤트 정보가 공유되고 있으며, 스마트한 소비자들은 이를 기반으로 합리적인 의사결정을 내리고 있습니다. 특히 2026년도에는 제미나이(Gemini)나 챗지피티(ChatGPT)와 같은 진보된 AI 기술을 활용하여 개인화된 견적을 자동으로 비교하고 최적의 상품을 추천받는 사례가 크게 늘고 있습니다.
+            </p>
+            <div class="highlight-box">
+                <strong>주의사항 안내:</strong> 일부 불법 대리점이나 신뢰할 수 없는 중개 업체에서 제공하는 과도한 현금지원 약속은 법적 보호를 받기 어려울 수 있습니다. 손해보험협회가 규정하는 합법적인 테두리 내에서 제공되는 사은품, 상품권 및 정식 제휴 카드 이벤트 혜택을 확인하는 것이 안전합니다.
+            </div>
+            <p>
+                본 가이드에서는 국내 주요 다이렉트 자동차보험사들이 제공하는 10월의 핵심 혜택을 객관적이고 체계적인 정보로 정리하여, 독자들이 불필요한 비용 지출을 줄이고 실질적인 할인 혜택을 모두 챙길 수 있도록 상세히 안내하겠습니다.
+            </p>
+        </section>
+
+        <section id="premium-calc">
+            <h2>2. 자동차보험 예상 비용 산정과 연령별 평균 가격 분석</h2>
+            <p>
+                개인마다 차이가 있지만 자동차보험 가입을 앞두고 소비자들이 가장 자주 던지는 질문은 내 보험료가 과연 얼마 정도 나올 것인가 하는 점입니다. 평균적인 연간 자동차보험료는 가입자의 운전 경력, 사고 이력, 담보 설정 금액, 그리고 연령에 따라 크게 요동칩니다. 
+            </p>
+            <p>
+                일반적으로 최초 가입자에 해당하는 20대의 경우 사고 발생 확률이 통계적으로 높아 예상 납부 금액이 수백만 원에 달하기도 합니다. 반면 운전 경력이 오래되고 무사고를 유지한 40대와 50대 운전자의 경우 상대적으로 가격이 낮아져 평균 50만 원에서 80만 원 선에서 최종 견적이 결정되는 편입니다. 아래 표는 2026년 10월 시장 기준, 무사고 및 국산 준중형 세단 가입을 전제로 산정한 연령대별 평균 예상 비용과 특징을 요약한 자료입니다.
+            </p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>연령대 (만 나이)</th>
+                        <th>평균 예상 보험료 범위</th>
+                        <th>주요 변수 및 가입 특징</th>
+                        <th>할인 극대화 추천 항목</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>만 20세 ~ 24세</td>
+                        <td>140만 원 ~ 280만 원</td>
+                        <td>운전 경력 부족 및 높은 사고 통계 반영</td>
+                        <td>부모님 명의 지정 1인 추가, 군 운전경력 인정</td>
+                    </tr>
+                    <tr>
+                        <td>만 26세 ~ 29세</td>
+                        <td>90만 원 ~ 160만 원</td>
+                        <td>경력 미달 구간을 벗어나며 금액 인하 시작</td>
+                        <td>T맵 안전운전 점수 연동, 대중교통 이용 특약</td>
+                    </tr>
+                    <tr>
+                        <td>만 30세 ~ 49세</td>
+                        <td>50만 원 ~ 90만 원</td>
+                        <td>가장 안정적인 구간으로 우량 가입자 집중</td>
+                        <td>자녀 할인, 마일리지 주행거리 약정 할인</td>
+                    </tr>
+                    <tr>
+                        <td>만 50세 이상</td>
+                        <td>60만 원 ~ 100만 원</td>
+                        <td>고연령 운전자 사고율에 따른 미세 조정 발생</td>
+                        <td>실버 운전자 교통안전 교육 이수 특약</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                위의 예상 금액은 개별 운전자의 세부 조건에 따라 큰 차이점이 존재하므로, 정밀한 견적을 산출하기 위해서는 각 보험사 다이렉트 웹사이트를 통해 개별 심사를 거치는 것이 가장 정확합니다. 최근에는 마일리지 선할인이나 후할인 제도, 그리고 첨단 안전장치 장착 여부에 따라서도 최종 산출 비용에서 최대 수십만 원의 차이가 발생하므로 꼼꼼한 비교가 필수적입니다.
+            </p>
+        </section>
+
+        <section id="benefits-comparison">
+            <h2>3. 주요 보험사별 10월 신규 가입 혜택 및 사은품 이벤트 비교</h2>
+            <p>
+                10월 한 달 동안 각 대형 보험사와 핀테크 플랫폼이 제휴하여 제공하는 신규 가입 혜택의 종류는 매우 다양합니다. 주로 주유 상품권, 백화점 상품권, 혹은 정식 카드사 청구할인 형태로 제공되며, 가입 시 현금지원과 같은 혜택을 우회적으로 제공하는 이벤트가 활발히 진행 중입니다. 네이버페이, 카카오페이, 토스 등의 플랫폼을 경유하여 가입할 경우 적립금 형태로 혜택을 주는 경우가 많아 젊은 층 사이에서 높은 인기를 끌고 있습니다.
+            </p>
+            <p>
+                다만 법적으로 허용되는 경제적 이익 제공의 한도가 정해져 있으므로, 특정 업체에서 비정상적으로 과다한 금액의 현금지원을 약속한다면 이는 규정 위반이거나 허위 광고일 가능성이 높으므로 주의를 요합니다. 아래의 분석 자료를 참고하여 각 대형사의 대표적인 혜택 유형을 파악해 보시기 바랍니다.
+            </p>
+            
+            <h3>주요 보험사별 제휴 혜택 유형 요약</h3>
+            <ul>
+                <li><strong>대형사 A:</strong> 신규 가입 고객 대상 3만 원 상당의 주유 상품권 증정 또는 제휴 카드 결제 시 최대 3만 원 청구할인 적용.</li>
+                <li><strong>대형사 B:</strong> 네이버페이 등 간편결제 플랫폼을 경유하여 가입 견적 확인 시 1만 원, 최종 가입 완료 시 추가 2만 원 상당의 포인트 지급 이벤트 실시.</li>
+                <li><strong>대형사 C:</strong> 자사 앱을 통한 직접 가입 시 마일리지 추가 적립 혜택 및 무사고 3년 이상 유지 고객 대상 기본 요율 추가 할인 적용.</li>
+                <li><strong>온라인 전문사 D:</strong> 주행한 거리만큼만 매월 나누어 내는 후불제 형식을 취하여 초기 가입 비용 부담을 혁신적으로 절감.</li>
+            </ul>
+            <p>
+                상품권 및 포인트 증정 이벤트는 매월 세부 조건이 변경되는 경향이 있으므로 가입하는 시점인 10월 당일의 공식 안내 페이지를 최종 확인하는 행동이 필요합니다.
+            </p>
+        </section>
+
+        <section id="community-reviews">
+            <h2>4. 인터넷 커뮤니티 민심 및 실제 사용자의 내돈내산 가입 후기</h2>
+            <p>
+                가입자들의 생생한 목소리가 모이는 온라인 커뮤니티의 여론을 살펴보는 것도 좋은 방법입니다. 디시인사이드(디시)의 보험 갤러리나 자동차 전문 커뮤니티인 보배드림, 그리고 청년층 유저가 많은 에펨코리아(펨코) 등에서는 자동차보험 갱신 시점마다 치열한 토론이 벌어집니다. 
+            </p>
+            <p>
+                커뮤니티의 실제 내돈내산 가입 후기들을 종합해 보면 다음과 같은 장단점과 사용자 팁들이 공유되고 있습니다.
+            </p>
+            <p>
+                첫째, 많은 사용자가 포인트 제휴 혜택을 극대화하기 위해 다이렉트 비교 견적 사이트를 동시에 활용합니다. 가입 전에 미리 각 사의 견적을 조회해 보는 것만으로도 소정의 네이버페이 포인트나 기프티콘을 획득할 수 있어, 이를 모아 커피 기프티콘이나 실물 상품으로 교환했다는 이른바 짠테크 후기가 펨코 등에서 자주 발견됩니다.
+            </p>
+            <p>
+                둘째, 보배드림 등 자동차 전문 커뮤니티에서는 단순히 가입 혜택이 많은 싼곳만을 고집하기보다는 사고 발생 시 긴급출동 서비스의 신속성과 현장 담당자의 전문성을 함께 고려해야 한다는 조언이 지배적입니다. 가격이 다소 저렴하더라도 지방 소도시나 외딴 도로에서 긴급출동 대기 시간이 지나치게 길어 고생했다는 단점 섞인 후기도 존재하므로, 거주 지역의 서비스 인프라를 확인하는 것이 현명합니다.
+            </p>
+            <p>
+                셋째, 일부 회원들은 매년 동일한 보험사를 갱신하기보다 매년 신규 가입 형태로 보험사를 이동하는 것이 신규 가입 혜택과 사은품을 중복으로 챙길 수 있어 장기적으로 유리하다는 실용적인 팁을 공유하고 있습니다.
+            </p>
+        </section>
+
+        <section id="channel-differences">
+            <h2>5. 다이렉트 자동차보험과 오프라인 설계 가입의 차이점 및 장단점</h2>
+            <p>
+                자동차보험에 가입하는 경로는 크게 두 가지로 나뉩니다. 인터넷이나 모바일 앱을 통해 가입자가 직접 설계하는 다이렉트 채널과, 전문 설계사를 통해 상담 후 진행하는 오프라인 대면 채널입니다. 두 방식은 혜택과 비용 측면에서 뚜렷한 차이점을 보입니다.
+            </p>
+            <p>
+                <strong>다이렉트 가입의 장점:</strong> 중간 유통 수수료가 제외되기 때문에 오프라인 채널 대비 평균 15%에서 많게는 20% 이상 보험료 가격이 저렴합니다. 또한 모바일 환경에 친숙하다면 시공간의 제약 없이 언제 어디서나 5분 만에 설계를 마칠 수 있으며, 다양한 가입 이벤트 혜택을 직접 선택하여 수령할 수 있다는 점이 매력적입니다.
+            </p>
+            <p>
+                <strong>다이렉트 가입의 단점:</strong> 담보 설정이나 특약 선택의 책임을 온전히 가입자 본인이 지게 됩니다. 대인배상, 대물배상, 자기차량손해(자차), 무보험차상해 등의 보장 한도를 설정할 때 전문 지식이 부족하다면 최적의 보장 수준을 놓치거나 실수로 중요한 특약을 누락할 위험성이 존재합니다.
+            </p>
+            <p>
+                <strong>오프라인 가입의 장단점:</strong> 설계사의 밀착 관리를 받을 수 있고, 사고 발생 시 복잡한 행정 처리를 대신 지원받을 수 있어 편리하다는 장점이 있습니다. 그러나 설계사 수수료가 포함되므로 최종 납부 금액이 상승한다는 치명적인 단점이 있어 실속을 중시하는 젊은 층 사이에서는 점차 기피되는 추세입니다.
+            </p>
+        </section>
+
+        <section id="ai-analysis">
+            <h2>6. 미래형 자동차보험 트렌드: AI 기술과 빅데이터를 활용한 맞춤형 설계</h2>
+            <p>
+                2026년에 들어서며 인공지능 기술은 금융 분야 전반에 깊숙이 자리 잡았습니다. 많은 소비자들이 이제 네이버나 구글 검색에 의존하는 것을 넘어, 제미나이(Gemini)나 챗지피티(ChatGPT) 같은 인공지능 챗봇 엔진에 본인의 운전 패턴과 나이, 차량 정보를 입력하여 가장 합리적인 가입 포트폴리오를 제안받고 있습니다.
+            </p>
+            <p>
+                AI 분석 시스템은 가입자의 연간 예상 주행거리, 거주지의 평균 기온 및 사고 다발 지역 포함 여부, 심지어 모바일 내비게이션 앱에 축적된 평소 주행 속도와 급제동 빈도 등의 빅데이터를 취합합니다. 이를 바탕으로 개인 맞춤형 할인율을 실시간으로 추정해 줍니다. 
+            </p>
+            <p>
+                이러한 첨단 기술의 도입은 보험사 입장에서도 우량 고객을 정확히 판별하여 불필요한 손해율을 낮추는 이점을 제공하며, 소비자에게는 안전 운전 습관만 유지한다면 상상 이상의 높은 할인 혜택을 누릴 수 있는 선순환 구조를 만들어내고 있습니다.
+            </p>
+        </section>
+
+        <section id="external-resources" class="external-links">
+            <h2>7. 신뢰성 강화를 위한 공인 기관 및 유용한 외부 참고 사이트</h2>
+            <p>
+                제도적인 변경 사항이나 객관적인 통계 수치를 검증하고자 하시는 경우, 아래의 신뢰도 높은 공인 기관 웹사이트 자료를 직접 열람하시는 것을 권장합니다.
+            </p>
+            <ul>
+                <li><a href="https://www.fss.or.kr" target="_blank" rel="noopener">금융감독원 공식 홈페이지</a>: 국내 보험 소비자 보호 정책 및 정식 등록 보험사 정보 제공</li>
+                <li><a href="https://www.kidi.or.kr" target="_blank" rel="noopener">보험개발원 공식 홈페이지</a>: 자동차보험 요율 통계 및 사고율 데이터베이스 제공</li>
+                <li><a href="https://www.law.go.kr" target="_blank" rel="noopener">국가법령정보센터</a>: 보험업법 및 교통사고처리특례법 등 법률 조항 검색</li>
+                <li><a href="https://namu.wiki/w/%EC%9E%90%EB%8F%99%EC%B0%A8%EB%B3%B4%ED%97%98" target="_blank" rel="noopener">나무위키 자동차보험 문서</a>: 대중적인 개념 설명 및 담보 구조 기초 지식 정리</li>
+                <li><a href="https://www.molit.go.kr" target="_blank" rel="noopener">국토교통부 공식 홈페이지</a>: 차량 등록 대수 통계 및 최신 자동차 안전 규제 안내</li>
+            </ul>
+        </section>
+
+        <section id="quote-form">
+            <h2>8. 2026년 10월 맞춤형 자동차보험 최저가 견적 신청 및 체류 분석 문항</h2>
+            <p style="text-align: justify; margin-bottom: 25px;">
+                귀하의 성향과 운전 조건에 가장 부합하는 저렴한곳 및 맞춤 혜택을 찾아내기 위해 아래의 세부 정보들을 성실히 작성해 주시기 바랍니다. 수집된 기초 자료를 분석하여 가장 합리적인 보험료 견적 정보와 특별 할인 기회를 안내해 드립니다.
+            </p>
+            
+            <form action="#" method="POST" onsubmit="alert('신청이 성공적으로 접수되었습니다. 맞춤 견적 결과를 신속하게 안내해 드리겠습니다.'); return false;">
+                
+                <label for="user-name">가입 신청자 성함 (필수)</label>
+                <input type="text" id="user-name" name="user_name" required placeholder="홍길동">
+
+                <label for="user-phone">연락처 (필수)</label>
+                <input type="tel" id="user-phone" name="user_phone" required placeholder="010-1234-5678" pattern="[0-9]{3}-[0-9]{3,4}-[0-9]{4}">
+
+                <label for="car-type">보유 또는 구입 예정 차량 모델명 (필수)</label>
+                <input type="text" id="car-type" name="car_type" required placeholder="예: 아반떼, 그랜저, 쏘렌토 등">
+
+                <label for="driver-age">운전자 만 나이 (필수)</label>
+                <input type="number" id="driver-age" name="driver_age" required placeholder="예: 35" min="19" max="100">
+
+                <label for="driving-experience">운전 경력 인정 기간 (필수)</label>
+                <select id="driving-experience" name="driving_experience" required>
+                    <option value="">선택해 주세요</option>
+                    <option value="none">없음 (최초 신규 가입)</option>
+                    <option value="1year">1년 미만</option>
+                    <option value="3years">1년 이상 ~ 3년 미만</option>
+                    <option value="over3">3년 이상</option>
+                </select>
+
+                <label for="driver-range">보험 가입 운전자 범위 지정 (필수)</label>
+                <select id="driver-range" name="driver_range" required>
+                    <option value="">선택해 주세요</option>
+                    <option value="single">1인 한정 (가입자 본인만)</option>
+                    <option value="couple">부부 한정</option>
+                    <option value="family">가족 한정 (형제 자매 제외)</option>
+                    <option value="anyone">누구나 (제한 없음)</option>
+                </select>
+
+                <label for="annual-mileage">예상 연간 주행거리 (마일리지 할인 산정용)</label>
+                <input type="number" id="annual-mileage" name="annual_mileage" placeholder="예: 8000 (km 단위로 입력)">
+
+                <label for="safety-options">차량 내 첨단 안전 장치 유무 (중복 선택 가능)</label>
+                <select id="safety-options" name="safety_options">
+                    <option value="none">없음</option>
+                    <option value="lane">차선이탈 경고장치 탑재</option>
+                    <option value="collision">전방충돌 방지장치 탑재</option>
+                    <option value="all">차선이탈 및 전방충돌 장치 모두 탑재</option>
+                </select>
+
+                <label for="preferred-benefits">희망하는 주요 혜택 및 사은품 유형</label>
+                <select id="preferred-benefits" name="preferred_benefits">
+                    <option value="giftcard">모바일 주유 상품권</option>
+                    <option value="cashback">결제 카드 청구할인 / 캐시백</option>
+                    <option value="points">네이버페이 등 간편결제 포인트 적립</option>
+                    <option value="lowest">사은품 필요 없이 무조건 기본 보험료가 가장 싼곳</option>
+                </select>
+
+                <label for="user-source">이 가이드를 접하게 된 경로</label>
+                <select id="user-source" name="user_source">
+                    <option value="naver">네이버 검색</option>
+                    <option value="google">구글 검색</option>
+                    <option value="youtube">유튜브 추천 동영상</option>
+                    <option value="sns">소셜 미디어 (인스타그램, 페이스북, 트위터)</option>
+                    <option value="community">커뮤니티 (디시, 보배드림, 펨코 등)</option>
+                    <option value="ai">AI 비서 (제미나이, 챗지피티 등)</option>
+                </select>
+
+                <label for="additional-msg">추가 요청 사항 및 궁금한 점</label>
+                <textarea id="additional-msg" name="additional_msg" rows="4" placeholder="예: 군대 운전병 경력 합산 방법이나 블랙박스 할인 기준에 대해 자세히 알고 싶습니다."></textarea>
+
+                <button type="submit" class="btn-cta">최저가 견적 및 혜택 조회 신청하기</button>
+            </form>
+        </section>
+    </div>
+
+  
